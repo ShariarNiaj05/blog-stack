@@ -1,4 +1,4 @@
-const LatestBlogs = () => {
+const LatestBlogs = ({ blogs }) => {
   return (
     <div>
       <h1 className="text-center text-4xl my-5">
