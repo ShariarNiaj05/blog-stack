@@ -1,5 +1,6 @@
 import { IBlog } from "@/types";
 import LatestBlogCard from "../ui/LatestBlogCard";
+import BlogCard from "../ui/BlogCard";
 
 const LatestBlogs = ({ blogs }: { blogs: IBlog[] }) => {
   return (
@@ -17,6 +18,11 @@ const LatestBlogs = ({ blogs }: { blogs: IBlog[] }) => {
       <div className="grid grid-cols-2 gap-4 my-5">
         {blogs?.slice(0, 2)?.map((blog: IBlog) => (
           <LatestBlogCard key={blog.id} blog={blog} />
+        ))}
+      </div>
+      <div className="grid grid-cols-4 gap-4 my-5">
+        {blogs?.slice(2, 6)?.map((blog: IBlog) => (
+          <BlogCard key={blog.id} blog={blog} />
         ))}
       </div>
     </div>
