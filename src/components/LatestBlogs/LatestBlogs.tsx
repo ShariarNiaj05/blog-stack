@@ -3,7 +3,7 @@ import LatestBlogCard from "../ui/LatestBlogCard";
 
 const LatestBlogs = ({ blogs }: { blogs: IBlog[] }) => {
   return (
-    <div>
+    <div className="w-[90%] mx-auto">
       <h1 className="text-center text-4xl my-5">
         Latest Post from <span className="text-accent">Blog stack</span>
       </h1>
@@ -14,8 +14,8 @@ const LatestBlogs = ({ blogs }: { blogs: IBlog[] }) => {
           unprecedented computational power.
         </i>
       </p>
-      <div className="grid grid-cols-2 gap-4">
-        {blogs?.map((blog: IBlog) => (
+      <div className="grid grid-cols-2 gap-4 my-5">
+        {blogs?.slice(0, 2)?.map((blog: IBlog) => (
           <LatestBlogCard key={blog.id} blog={blog} />
         ))}
       </div>
