@@ -8,7 +8,9 @@ interface BlogId {
 }
 const BlogDetailsPage = async ({ params }: BlogId) => {
   const { blogId } = params;
-  const response = await fetch(`http://localhost:5000/blogs/${blogId}`);
+  const response = await fetch(`http://localhost:5000/blogs/${blogId}`, {
+    cache: "no-store",
+  });
   const blog: IBlog = await response.json();
   return (
     <div className="my-10">
