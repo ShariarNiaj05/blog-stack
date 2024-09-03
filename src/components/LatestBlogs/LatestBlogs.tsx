@@ -1,4 +1,6 @@
-const LatestBlogs = ({ blogs }) => {
+import { IBlog } from "@/types";
+
+const LatestBlogs = ({ blogs }: IBlog[]) => {
   return (
     <div>
       <h1 className="text-center text-4xl my-5">

@@ -1,9 +1,9 @@
 import LatestBlogs from "@/components/LatestBlogs/LatestBlogs";
-import LatestBlogCard from "@/components/ui/LatestBlogCard";
+import { IBlog } from "@/types";
 
 const HomePage = async () => {
   const response = await fetch("http://localhost:5000/blogs");
-  const blogs = await response.json();
+  const blogs: IBlog[] = await response.json();
   return (
     <>
       <h1 className="text-center text-4xl my-5">
