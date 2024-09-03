@@ -2,7 +2,9 @@ import LatestBlogs from "@/components/LatestBlogs/LatestBlogs";
 import { IBlog } from "@/types";
 
 const HomePage = async () => {
-  const response = await fetch("http://localhost:5000/blogs");
+  const response = await fetch("http://localhost:5000/blogs", {
+    cache: "force-cache",
+  });
   const blogs: IBlog[] = await response.json();
   return (
     <>
