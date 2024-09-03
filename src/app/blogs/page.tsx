@@ -6,7 +6,7 @@ const BlogsPage = async () => {
   const response = await fetch("http://localhost:5000/blogs");
   const blogs: IBlog[] = await response.json();
   return (
-    <div>
+    <div className="w-[90%] mx-auto">
       {" "}
       <h1 className="text-center text-4xl my-5">
         All Blog Post from <span className="text-accent">Blog stack</span>
