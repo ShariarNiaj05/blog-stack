@@ -1,6 +1,10 @@
+import BlogCard from "@/components/ui/BlogCard";
+import { IBlog } from "@/types";
 import React from "react";
 
-const BlogsPage = () => {
+const BlogsPage = async () => {
+  const response = await fetch("http://localhost:5000/blogs");
+  const blogs: IBlog[] = await response.json();
   return (
     <div>
       {" "}
@@ -14,6 +18,11 @@ const BlogsPage = () => {
           unprecedented computational power.
         </i>
       </p>
+      <div className="grid grid-cols-4 gap-4 my-5">
+        {blogs?.map((blog: IBlog) => (
+          <BlogCard key={blog.id} blog={blog} />
+        ))}
+      </div>
     </div>
   );
 };
