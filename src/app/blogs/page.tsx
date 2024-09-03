@@ -3,7 +3,9 @@ import { IBlog } from "@/types";
 import React from "react";
 
 const BlogsPage = async () => {
-  const response = await fetch("http://localhost:5000/blogs");
+  const response = await fetch("http://localhost:5000/blogs", {
+    cache: "no-store",
+  });
   const blogs: IBlog[] = await response.json();
   return (
     <div className="w-[90%] mx-auto">
@@ -18,7 +20,7 @@ const BlogsPage = async () => {
           unprecedented computational power.
         </i>
       </p>
-      <div className="grid grid-cols-4 gap-4 my-5">
+      <div className="grid grid-cols-3 gap-4 my-5">
         {blogs?.map((blog: IBlog) => (
           <BlogCard key={blog.id} blog={blog} />
         ))}
