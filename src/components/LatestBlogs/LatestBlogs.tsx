@@ -1,4 +1,5 @@
 import { IBlog } from "@/types";
+import LatestBlogCard from "../ui/LatestBlogCard";
 
 const LatestBlogs = ({ blogs }: { blogs: IBlog[] }) => {
   return (
@@ -13,6 +14,11 @@ const LatestBlogs = ({ blogs }: { blogs: IBlog[] }) => {
           unprecedented computational power.
         </i>
       </p>
+      <div>
+        {blogs?.map((blog: IBlog) => (
+          <LatestBlogCard key={blog.id} blog={blog} />
+        ))}
+      </div>
     </div>
   );
 };
