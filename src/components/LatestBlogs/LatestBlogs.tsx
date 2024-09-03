@@ -14,7 +14,7 @@ const LatestBlogs = ({ blogs }: { blogs: IBlog[] }) => {
           unprecedented computational power.
         </i>
       </p>
-      <div>
+      <div className="grid grid-cols-2 gap-4">
         {blogs?.map((blog: IBlog) => (
           <LatestBlogCard key={blog.id} blog={blog} />
         ))}
