@@ -1,6 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
+// import fs from "fs";
 
 type FormValues = {
   id: string;
@@ -25,6 +26,7 @@ const CreateBlogForm = () => {
 
     data.id = JSON.stringify(blogs.length + 1);
     data.total_likes = "100";
+    // fs.writeFileSync("db.json", data);
     console.log(data);
   };
 
