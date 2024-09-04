@@ -20,6 +20,11 @@ const CreateBlogForm = () => {
   } = useForm<FormValues>();
 
   const onSubmit = async (data: FormValues) => {
+    const res = await fetch("http://localhost:5000/blogs");
+    const blogs = await res.json();
+
+    data.id = blogs.length + 1;
+
     console.log(data);
   };
 
