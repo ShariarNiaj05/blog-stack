@@ -19,7 +19,13 @@ const CreateBlogForm = () => {
     data.id = JSON.stringify(blogs.length + 1);
     data.total_likes = "100";
     // fs.writeFileSync("db.json", data);
-    createBlog(data);
+    const payload = {
+      blogs: {
+        ...blogs,
+        data,
+      },
+    };
+    createBlog(payload);
     console.log(data);
   };
 

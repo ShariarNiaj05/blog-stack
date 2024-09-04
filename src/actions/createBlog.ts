@@ -1,3 +1,5 @@
+"use server";
+
 import { FormValues } from "@/types";
 import fs from "fs";
 
