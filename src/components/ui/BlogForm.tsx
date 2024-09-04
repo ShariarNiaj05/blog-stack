@@ -19,8 +19,11 @@ const CreateBlogForm = () => {
     data.id = JSON.stringify(blogs.length + 1);
     data.total_likes = "100";
     // fs.writeFileSync("db.json", data);
-    createBlog(data);
-    console.log(data);
+    try {
+      createBlog(data);
+    } catch (error: any) {
+      throw new Error(error.message);
+    }
   };
 
   return (
