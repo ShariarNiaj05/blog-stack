@@ -20,7 +20,8 @@ const CreateBlogForm = () => {
     data.total_likes = "100";
     // fs.writeFileSync("db.json", data);
     try {
-      createBlog(data);
+      const res = createBlog(data);
+      console.log(res);
     } catch (error: any) {
       throw new Error(error.message);
     }
