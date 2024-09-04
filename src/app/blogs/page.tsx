@@ -15,12 +15,11 @@ const BlogsPage = () => {
     isError,
     error,
   } = useGetBlogsQuery(undefined);
-  console.log(blogs);
   return (
     <div className="w-[90%] mx-auto">
       {" "}
       <h1 className="text-center text-4xl my-5">
-        All Blog Post from <span className="text-accent">Blog stack</span>
+        All Blog Post from <span className="text-accent">Blog Stack</span>
       </h1>
       <p className=" text-xl text-center text-gray-400 w-2/4 mx-auto">
         <i>
