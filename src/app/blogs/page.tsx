@@ -1,4 +1,5 @@
 import BlogCard from "@/components/ui/BlogCard";
+import { useGetBlogsQuery } from "@/redux/api/baseApi";
 import { IBlog } from "@/types";
 import React from "react";
 
@@ -7,6 +8,7 @@ const BlogsPage = async () => {
     cache: "no-store",
   });
   const blogs: IBlog[] = await response.json();
+  const {} = useGetBlogsQuery(undefined);
   return (
     <div className="w-[90%] mx-auto">
       {" "}
