@@ -1,17 +1,9 @@
 "use client";
 
+import { createBlog } from "@/actions/createBlog";
+import { FormValues } from "@/types";
 import { useForm } from "react-hook-form";
 // import fs from "fs";
-
-type FormValues = {
-  id: string;
-  title: string;
-  description: string;
-  publish_date: string;
-  author_name: string;
-  blog_image: string;
-  total_likes: string;
-};
 
 const CreateBlogForm = () => {
   const {
@@ -27,6 +19,7 @@ const CreateBlogForm = () => {
     data.id = JSON.stringify(blogs.length + 1);
     data.total_likes = "100";
     // fs.writeFileSync("db.json", data);
+    createBlog(data);
     console.log(data);
   };
 
