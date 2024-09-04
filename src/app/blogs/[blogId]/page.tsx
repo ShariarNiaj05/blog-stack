@@ -11,7 +11,9 @@ export const generateStaticParams = async () => {
   const response = await fetch(`http://localhost:5000/blogs`);
   const blogs = await response.json();
 
-  return blogs.slice(0, 3).map((blog: IBlog) => ({}));
+  return blogs.slice(0, 3).map((blog: IBlog) => ({
+    blogId: blog.id,
+  }));
 };
 
 const BlogDetailsPage = async ({ params }: BlogId) => {
